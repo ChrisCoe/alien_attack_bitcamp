@@ -497,7 +497,7 @@ public class SpaceGame extends GameTemplate{
 		if(_pause){
 			drawPause(g);
 		} else{
-			if(isAKeyDown(KeyEvent.VK_ENTER)){
+			if(isAKeyDown(KeyEvent.VK_SPACE)){
 				_start = true;
 			}
 			if(_start){
@@ -690,7 +690,7 @@ public class SpaceGame extends GameTemplate{
 		if(_life <= 0){
 			g.setFont(new Font("TimesRoman", Font.PLAIN, 30));
 			g.drawString("YOU LOSE!" , getWidth()/2 - 300 , getHeight()/2 - 10);
-			g.drawString("Press ENTER to play again " , getWidth()/2 - 200 , getHeight()/2 + 100);
+			g.drawString("Press the SPACE BAR to play again " , getWidth()/2 - 200 , getHeight()/2 + 100);
 			drawPlayAgain(g);
 		} 
 		else{
@@ -701,28 +701,12 @@ public class SpaceGame extends GameTemplate{
 				_wave = "Wave 2";_wave2 = true;
 			}
 			if(_score >= 50000){
-				_wave = "Wave 3"; _wave3 = true;	
+				_wave = "Wave 3"; _wave3 = true;
 			}
 			if(_score >= 100000){
 				_wave = "Wave 4"; _wave4 = true;
 			}
-			if(_score == 20000) {
-				_life++;
-			}
-			if(_score == 50000) {
-				_life++;
-			}
-			if(_score == 75000) {
-				_life++;
-			}
-			if(_score == 100000) {
-				_life++;
-			}
-			if(_score == 125000) {
-				_life++;
-			}
-			
-			if(_score == 1000000){// 1,000,000
+			if(_score >= 1000000){// 1,000,000
 				g.setFont(new Font("TimesRoman", Font.PLAIN, 70));
 				g.drawString("CONGRATULATIONS, YOU WIN!  Pollo" , getWidth()/2 - 340 , getHeight()/2 - 10);
 				
@@ -731,13 +715,12 @@ public class SpaceGame extends GameTemplate{
 				_won = true;
 				drawPlayAgain(g);
 			}
-			
 		
 			g.drawString(_wave , getWidth()/2 - 300 , getHeight()/2 - 200);
 		}
 	}
 	private void drawPlayAgain(Graphics2D g){
-		if(isAKeyDown(KeyEvent.VK_ENTER)) {
+		if(isAKeyDown(KeyEvent.VK_SPACE)) {
 		_life = 10;
 		_won = false;
 		Color fill = Color.white;
@@ -749,10 +732,6 @@ public class SpaceGame extends GameTemplate{
 		
 		g.drawString("PolloShip Life:  " + _life, getWidth()/5 - 10, 50);
 		g.setFont(new Font("TimesRoman", Font.PLAIN, 70));
-		_wave2 = false;
-		_wave3 = false;
-		_wave4 = false;
-		_wave = "Wave 1";
 		init();
 		}
 		
@@ -763,7 +742,7 @@ public class SpaceGame extends GameTemplate{
 		g.setFont(new Font("Book Antiqua", Font.BOLD, 45));
 		g.drawString("Alien Attack!" , getWidth()/2 - 150 , getHeight()/2 - 170);
 		g.setFont(new Font("Book Antiqua", Font.BOLD, 20));
-		g.drawString("Press ENTER to Play" , getWidth()/2 - 130, getHeight()/2 - 50);
+		g.drawString("Press SPACEBAR to Play" , getWidth()/2 - 130, getHeight()/2 - 50);
 		g.drawString("Shoot ... Spacebar" , getWidth()/2 - 100, getHeight()/2 + 10);
 		g.drawString("Move ... W/S or Up Key/ Down key " , getWidth()/2 - 190, getHeight()/2 + 30);
 		g.drawString("Pause ... P Key" , getWidth()/2 - 90, getHeight()/2 + 50);

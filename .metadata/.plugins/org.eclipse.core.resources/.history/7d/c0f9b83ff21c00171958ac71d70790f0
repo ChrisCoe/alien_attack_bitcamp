@@ -701,28 +701,12 @@ public class SpaceGame extends GameTemplate{
 				_wave = "Wave 2";_wave2 = true;
 			}
 			if(_score >= 50000){
-				_wave = "Wave 3"; _wave3 = true;	
+				_wave = "Wave 3"; _wave3 = true;
 			}
 			if(_score >= 100000){
 				_wave = "Wave 4"; _wave4 = true;
 			}
-			if(_score == 20000) {
-				_life++;
-			}
-			if(_score == 50000) {
-				_life++;
-			}
-			if(_score == 75000) {
-				_life++;
-			}
-			if(_score == 100000) {
-				_life++;
-			}
-			if(_score == 125000) {
-				_life++;
-			}
-			
-			if(_score == 1000000){// 1,000,000
+			if(_score >= 1000000){// 1,000,000
 				g.setFont(new Font("TimesRoman", Font.PLAIN, 70));
 				g.drawString("CONGRATULATIONS, YOU WIN!  Pollo" , getWidth()/2 - 340 , getHeight()/2 - 10);
 				
@@ -731,7 +715,6 @@ public class SpaceGame extends GameTemplate{
 				_won = true;
 				drawPlayAgain(g);
 			}
-			
 		
 			g.drawString(_wave , getWidth()/2 - 300 , getHeight()/2 - 200);
 		}

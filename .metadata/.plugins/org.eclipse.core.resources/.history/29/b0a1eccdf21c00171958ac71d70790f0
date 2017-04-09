@@ -706,7 +706,7 @@ public class SpaceGame extends GameTemplate{
 			if(_score >= 100000){
 				_wave = "Wave 4"; _wave4 = true;
 			}
-			if(_score == 20000) {
+			if(_score == 25000) {
 				_life++;
 			}
 			if(_score == 50000) {
