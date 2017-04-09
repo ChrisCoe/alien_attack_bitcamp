@@ -528,7 +528,7 @@ public class SpaceGame extends GameTemplate{
 					}
 				}
 				
-				if(_wave2){
+				if(!_wave2){
 					if(_aliens2 != null){
 						
 						for(Alien2 a: _aliens2){
@@ -548,7 +548,7 @@ public class SpaceGame extends GameTemplate{
 					}
 				}
 				
-				if(_wave3){
+				if(!_wave3){
 					if(_aliensSpd != null){
 						
 						for(Alien a: _aliensSpd){
@@ -569,7 +569,7 @@ public class SpaceGame extends GameTemplate{
 					
 				}
 				
-				if(_wave4){
+				if(!_wave4){
 					if(_aliensBulk != null){
 						
 						for(Alien2 a: _aliensBulk){
@@ -632,17 +632,17 @@ public class SpaceGame extends GameTemplate{
 				a.draw(g);
 			}
 			
-			if(_wave2){
+			if(!_wave2){
 				for(Alien2 a : _aliens2){
 					a.draw(g);
 				}
 			}
-			if(_wave3){
+			if(!_wave3){
 				for(Alien a : _aliensSpd){
 					a.draw2(g);
 				}
 			}
-			if(_wave4){
+			if(!_wave4){
 				for(Alien2 a : _aliensBulk){
 					a.draw2(g);
 				}
@@ -701,13 +701,13 @@ public class SpaceGame extends GameTemplate{
 			g.setColor(Color.white);
 			g.setFont(new Font("TimesRoman", Font.PLAIN, 20));
 			
-			if(_score >= 20000){
+			if(_score >= 1800){
 				_wave = "Wave 2";_wave2 = true;
 			}
-			if(_score >= 50000){
+			if(_score >= 20000){
 				_wave = "Wave 3"; _wave3 = true;
 			}
-			if(_score >= 100000){
+			if(_score >= 80000){
 				_wave = "Wave 4"; _wave4 = true;
 			}
 			if(_score >= 1000000){// 1,000,000

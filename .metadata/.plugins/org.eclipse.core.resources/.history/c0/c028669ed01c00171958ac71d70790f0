@@ -258,7 +258,7 @@ public class SpaceGame extends GameTemplate{
 				_aliens.add(a);
 			}
 		}
-		if(_aliens2 != null && !_wave2 && !_pause){ // do not spawn if paused
+		if(_aliens2 != null && _wave2 && !_pause){ // do not spawn if paused
 
 			if(Math.random()*100 > 99){ // chance of respawning
 				Alien2 a  = new Alien2();
@@ -287,7 +287,7 @@ public class SpaceGame extends GameTemplate{
 			}
 		}
 		if(_aliensBulk != null && _wave3 && !_pause){// lol or _start
-			if(Math.random()*100 > 90){ // chance of respawning
+			if(Math.random()*100 > 95){ // chance of respawning
 				Alien2 a  = new Alien2();
 				a.setTopX(getWidth() + 10);
 				a.setTopY((int)(Math.random()*(getHeight() - 26)));
@@ -304,13 +304,13 @@ public class SpaceGame extends GameTemplate{
 		
 		
 		//Removes bullets out of game
-		/*for(int i = 0; _bullets != null && i < _bullets.size(); i++){
+		for(int i = 0; _bullets != null && i < _bullets.size(); i++){
 			Bullet b = _bullets.get(i);
 			if(b.getTopX() > getWidth()){
 				_bullets.remove(i);
 			}
 		}
-		*/
+		
 		//Remove Dead Aliens
 		
 		for(int i = 0; _aliens != null && i < _aliens.size()&& i > 0 ; i++){
@@ -701,13 +701,13 @@ public class SpaceGame extends GameTemplate{
 			g.setColor(Color.white);
 			g.setFont(new Font("TimesRoman", Font.PLAIN, 20));
 			
-			if(_score >= 20000){
+			if(_score >= 1800){
 				_wave = "Wave 2";_wave2 = true;
 			}
-			if(_score >= 50000){
+			if(_score >= 20000){
 				_wave = "Wave 3"; _wave3 = true;
 			}
-			if(_score >= 100000){
+			if(_score >= 80000){
 				_wave = "Wave 4"; _wave4 = true;
 			}
 			if(_score >= 1000000){// 1,000,000

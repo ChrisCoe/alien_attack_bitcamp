@@ -548,7 +548,7 @@ public class SpaceGame extends GameTemplate{
 					}
 				}
 				
-				if(_wave3){
+				if(!_wave3){
 					if(_aliensSpd != null){
 						
 						for(Alien a: _aliensSpd){
@@ -569,7 +569,7 @@ public class SpaceGame extends GameTemplate{
 					
 				}
 				
-				if(_wave4){
+				if(!_wave4){
 					if(_aliensBulk != null){
 						
 						for(Alien2 a: _aliensBulk){

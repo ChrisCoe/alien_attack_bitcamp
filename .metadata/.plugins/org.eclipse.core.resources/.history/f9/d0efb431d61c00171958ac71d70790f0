@@ -378,7 +378,7 @@ public class SpaceGame extends GameTemplate{
 							a.setSpeedX(-12);
 							a.setSpeedY(-1);
 							a.kill();
-							_bullets.remove(j); 
+							//_bullets.remove(j); 
 							_score = _score + 100;
 							j--;
 						}

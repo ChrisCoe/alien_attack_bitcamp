@@ -548,7 +548,7 @@ public class SpaceGame extends GameTemplate{
 					}
 				}
 				
-				if(_wave3){
+				if(!_wave3){
 					if(_aliensSpd != null){
 						
 						for(Alien a: _aliensSpd){
@@ -569,7 +569,7 @@ public class SpaceGame extends GameTemplate{
 					
 				}
 				
-				if(_wave4){
+				if(!_wave4){
 					if(_aliensBulk != null){
 						
 						for(Alien2 a: _aliensBulk){
@@ -701,7 +701,7 @@ public class SpaceGame extends GameTemplate{
 			g.setColor(Color.white);
 			g.setFont(new Font("TimesRoman", Font.PLAIN, 20));
 			
-			if(_score >= 20000){
+			if(_score >= 2000){
 				_wave = "Wave 2";_wave2 = true;
 			}
 			if(_score >= 50000){
