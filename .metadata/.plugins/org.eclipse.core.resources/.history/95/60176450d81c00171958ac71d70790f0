@@ -274,7 +274,7 @@ public class SpaceGame extends GameTemplate{
 		}
 		if(_aliensSpd != null && _wave3 && !_pause){
 			
-			if(Math.random()*1000 > 999){ // chance of respawning
+			if(Math.random()*1000 > 99){ // chance of respawning
 				Alien a  = new Alien(10,10);
 				a.setTopX(getWidth() + 1);
 				a.setTopY((int)(Math.random()*(getHeight() - 26)));
@@ -287,7 +287,7 @@ public class SpaceGame extends GameTemplate{
 			}
 		}
 		if(_aliensBulk != null && _wave3 && !_pause){// lol or _start
-			if(Math.random()*100 > 99.5){ // chance of respawning
+			if(Math.random()*100 > 90){ // chance of respawning
 				Alien2 a  = new Alien2();
 				a.setTopX(getWidth() + 10);
 				a.setTopY((int)(Math.random()*(getHeight() - 26)));
@@ -303,7 +303,14 @@ public class SpaceGame extends GameTemplate{
 		
 		
 		
-		
+		//Removes bullets out of game
+		/*for(int i = 0; _bullets != null && i < _bullets.size(); i++){
+			Bullet b = _bullets.get(i);
+			if(b.getTopX() > getWidth()){
+				_bullets.remove(i);
+			}
+		}
+		*/
 		//Remove Dead Aliens
 		
 		for(int i = 0; _aliens != null && i < _aliens.size()&& i > 0 ; i++){

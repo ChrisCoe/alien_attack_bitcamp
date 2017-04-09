@@ -287,7 +287,7 @@ public class SpaceGame extends GameTemplate{
 			}
 		}
 		if(_aliensBulk != null && _wave3 && !_pause){// lol or _start
-			if(Math.random()*100 > 99.5){ // chance of respawning
+			if(Math.random()*100 > 99){ // chance of respawning
 				Alien2 a  = new Alien2();
 				a.setTopX(getWidth() + 10);
 				a.setTopY((int)(Math.random()*(getHeight() - 26)));
@@ -391,7 +391,7 @@ public class SpaceGame extends GameTemplate{
 							a.setSpeedX(a.getSpeedX() + 5);
 							a.setSpeedY(-1);
 							a.damage();
-							_bullets.remove(j); 
+							//_bullets.remove(j); 
 							_score = _score + 200;
 							j--;
 							if(a.getHealth() <= 0){
