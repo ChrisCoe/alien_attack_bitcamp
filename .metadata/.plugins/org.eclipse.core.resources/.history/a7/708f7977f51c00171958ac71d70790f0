@@ -246,7 +246,7 @@ public class SpaceGame extends GameTemplate{
 		
 		if(_aliens != null && _start && !_pause){ // spawn once the game begins
 			
-			if(Math.random()*100 > 97){
+			if(Math.random()*100 > 99){
 				Alien a  = new Alien(10,10);
 				a.setTopX(getWidth());
 				a.setTopY((int)(Math.random()*(getHeight() - 26)));
@@ -260,7 +260,7 @@ public class SpaceGame extends GameTemplate{
 		}
 		if(_aliens2 != null && !_wave2 && !_pause){ // do not spawn if paused
 
-			if(Math.random()*100 > 99){ // chance of respawning
+			if(Math.random()*100 > 99.5){ // chance of respawning
 				Alien2 a  = new Alien2();
 				a.setTopX(getWidth() + 10);
 				a.setTopY((int)(Math.random()*(getHeight() - 26)));
@@ -300,13 +300,7 @@ public class SpaceGame extends GameTemplate{
 				_aliensBulk.add(a);
 			} 
 		}
-		for(int i = 0; _bullets != null && i < _bullets.size(); i++){
-			 				Bullet b = _bullets.get(i);
-			 				if(b.getTopX() > getWidth()){
-			 					_bullets.remove(i);
-			 					i--;
-			 				}
-			 			}
+		
 		
 		
 		
@@ -786,6 +780,7 @@ public class SpaceGame extends GameTemplate{
 		g.setColor(Color.white);
 		g.setFont(new Font("Book Antiqua", Font.BOLD, 35));
 		g.drawString("Pause" , getWidth()/2 - 70, getHeight()/2);
+		
 		g.drawString("Press P to Unpause" , getWidth()/2 - 150 , getHeight()/2 + 50);
 	}
 }
