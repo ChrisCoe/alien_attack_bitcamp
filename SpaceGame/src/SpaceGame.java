@@ -673,7 +673,7 @@ public class SpaceGame extends GameTemplate{
 	/**
 	 * Draw the Pong board background
 	 */
-	private  void drawResults(Graphics2D g){
+	private void drawResults(Graphics2D g){
 		Color fill = Color.white;
 		g.setColor(fill); 
 		
@@ -686,11 +686,12 @@ public class SpaceGame extends GameTemplate{
 		//boolean won = false;
 		
 		if(_life <= 0){
-			
 			g.setFont(new Font("TimesRoman", Font.PLAIN, 30));
 			g.drawString("YOU LOSE!" , getWidth()/2 - 300 , getHeight()/2 - 10);
-			
-		} else{
+			g.drawString("Press the SPACE BAR to play again " , getWidth()/2 - 200 , getHeight()/2 + 100);
+			drawPlayAgain(g);
+		} 
+		else{
 			g.setColor(Color.white);
 			g.setFont(new Font("TimesRoman", Font.PLAIN, 20));
 			
@@ -705,16 +706,32 @@ public class SpaceGame extends GameTemplate{
 			}
 			if(_score >= 1000000){// 1,000,000
 				g.setFont(new Font("TimesRoman", Font.PLAIN, 70));
-				g.drawString("YOU WIN!  Pollo" , getWidth()/2 - 340 , getHeight()/2 - 10);
+				g.drawString("CONGRATULATIONS, YOU WIN!  Pollo" , getWidth()/2 - 340 , getHeight()/2 - 10);
 				
 				g.setFont(new Font("TimesRoman", Font.PLAIN, 30));
-				g.drawString("Close the game to start again" , getWidth()/2 - 200 , getHeight()/2 + 100);
+				g.drawString("Press the SPACE BAR to play again " , getWidth()/2 - 200 , getHeight()/2 + 100);
 				// close the game to start again
 				_won = true;
 			}
 		
 			g.drawString(_wave , getWidth()/2 - 300 , getHeight()/2 - 200);
 		}
+	}
+	private void drawPlayAgain(Graphics2D g){
+		if(isAKeyDown(KeyEvent.VK_SPACE)) {
+		_life = 10;
+		Color fill = Color.white;
+		g.setColor(fill); 
+		
+		//Score Board
+		g.setFont(new Font("TimesRoman", Font.PLAIN, 20));
+		g.drawString("PolloShip Score:  " + _score, getWidth()/5 - 10, 30);
+		
+		g.drawString("PolloShip Life:  " + _life, getWidth()/5 - 10, 50);
+		g.setFont(new Font("TimesRoman", Font.PLAIN, 70));
+		init();
+		}
+		
 	}
 	
 	private void drawIntro(Graphics2D g){
